@@ -16,6 +16,7 @@ def main():
 
 
 def determine_result(score):
+    """Determine result based on score"""
     if score < MINIMUM_SCORE or score > MAXIMUM_SCORE:
         result = "Invalid score"
     elif score >= 90:
