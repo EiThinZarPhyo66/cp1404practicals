@@ -1,10 +1,6 @@
 from prac_06.guitar import Guitar
 
 
-def sort_by_year(guitar):
-    return guitar.year
-
-
 def main():
     """Guitar program, using Guitar class."""
     guitars = []
@@ -22,8 +18,7 @@ def main():
     guitars.append(Guitar("Gibson L-5 CES", 1922, 16035.40))
     guitars.append(Guitar("Line 6 JTV-59", 2010, 1512.9))
 
-    guitars.sort(key=sort_by_year)  # Sort the list of guitars using the custom sorting function
-
+    guitars.sort()
     print("\nThese are my guitars:")
     for i, guitar in enumerate(guitars, 1):
         vintage_string = ""
