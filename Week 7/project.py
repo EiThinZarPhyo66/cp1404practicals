@@ -15,7 +15,7 @@ class Project:
     def __str__(self):
         """Return string representation of a Project."""
         return f"{self.name}, start: {self.start_date.strftime('%d/%m/%Y')}, priority {self.priority}, " \
-               f"estimate: ${self.cost_estimate}, completion: {self.completion_percentage}% "
+               f"estimate: ${self.cost_estimate:.2f}, completion: {self.completion_percentage}% "
 
     def __lt__(self, other):
         """Sort the list of projects based on priority number."""
