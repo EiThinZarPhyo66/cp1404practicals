@@ -15,7 +15,8 @@ def main():
             load_projects(FILENAME)
         elif choice == "s":
             save_projects(FILENAME)
-        # elif choice == "d":
+        elif choice == "d":
+            display_projects()
         # elif choice == "f":
         # elif choice == "a":
         # elif choice == "u":
@@ -26,13 +27,27 @@ def main():
     print("Thank you for using custom-built project management software.")
 
 
+def display_projects():
+    """Display sorted incompleted projects and completed projects nicely"""
+    incompleted_projects = [project for project in projects if int(project.completion_percentage) < 100]
+    incompleted_projects.sort()
+    print("Incomplete projects: ")
+    for incompleted_project in incompleted_projects:
+        print(f"  {incompleted_project}")
+    completed_projects = [project for project in projects if int(project.completion_percentage) == 100]
+    completed_projects.sort()
+    print("Complete projects: ")
+    for completed_project in completed_projects:
+        print(f"  {completed_project}")
+
+
 def save_projects(filename):
     """Save update projects into projects.txt"""
     with open(filename, "w") as out_file:
         out_file.write("Name\tStart Date\tPriority\tEstimate\tCompletion\n")
         for project in projects:
             out_file.write(f"{project.name}\t{project.start_date.strftime('%d/%m/%Y')}\t{project.priority}"
-                           f"\t{project.cost_estimate}\t{project.completion_percentage}\n")
+                           f"\t{project.cost_estimate:.2f}\t{project.completion_percentage}\n")
 
 
 def load_projects(filename):
