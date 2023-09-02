@@ -23,7 +23,7 @@ def main():
         else:
             print("Invalid input")
         print(MENU)
-        choice = input(">>> ").upper()
+        choice = input(">>> ").lower()
     print("Thank you for using custom-built project management software.")
 
 
@@ -57,8 +57,7 @@ def load_projects(filename):
         for line in in_file:
             name, start_date, priority, cost_estimate, completion = line.strip().split("\t")
             start_date = datetime.datetime.strptime(start_date, "%d/%m/%Y").date()
-            project = Project(name, start_date, int(priority), float(cost_estimate), int(completion))
-            projects.append(project)
+            projects.append(Project(name, start_date, int(priority), float(cost_estimate), int(completion)))
 
 
 main()
