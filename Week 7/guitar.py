@@ -26,5 +26,3 @@ class Guitar:
     def __lt__(self, other):
         """Sort the list of guitars by released year."""
         return self.year < other.year
-
-
