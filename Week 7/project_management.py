@@ -21,7 +21,8 @@ def main():
             filter_projects()
         elif choice == "a":
             add_projects()
-        # elif choice == "u":
+        elif choice == "u":
+            update_project()
         else:
             print("Invalid input")
         print(MENU)
@@ -86,6 +87,27 @@ def load_projects(filename):
             name, start_date, priority, cost_estimate, completion = line.strip().split("\t")
             start_date = datetime.datetime.strptime(start_date, "%d/%m/%Y").date()
             projects.append(Project(name, start_date, int(priority), float(cost_estimate), int(completion)))
+
+
+def update_project():
+    """Choose a project and update completion percentage and/or priority."""
+    for number, project in enumerate(projects):
+        print(f"{number} {project}")
+
+    project_choice = input("Project choice: ")
+    if project_choice.isdigit():
+        project_choice = int(project_choice)
+        if 0 <= project_choice < len(projects):
+            selected_project = projects[project_choice]
+            print(selected_project)
+
+            new_percentage = input("New Percentage: ")
+            if new_percentage.isdigit():
+                selected_project.completion_percentage = int(new_percentage)
+
+            new_priority = input("New Priority: ")
+            if new_priority.isdigit():
+                selected_project.priority = int(new_priority)
 
 
 main()
