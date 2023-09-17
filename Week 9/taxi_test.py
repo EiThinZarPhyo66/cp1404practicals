@@ -9,6 +9,3 @@ my_taxi.start_fare()
 my_taxi.drive(100)
 print(my_taxi)
 print(f"The taxi's current fare {my_taxi.current_fare_distance}.")
-
-
-
