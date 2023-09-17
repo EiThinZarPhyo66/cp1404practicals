@@ -12,4 +12,3 @@ print(f"The taxi's current fare {my_taxi.current_fare_distance}.")
 
 
 
-

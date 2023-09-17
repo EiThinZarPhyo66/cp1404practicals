@@ -18,4 +18,3 @@ class UnreliableCar(Car):
         else:
             distance_driven = 0
         return distance_driven
-
