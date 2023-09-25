@@ -22,5 +22,5 @@ The practical tasks in this subject were generally well-structured, offering han
 
 Here are two examples of PRs that show me doing good code reviews.
 
-* [Example-1] (https://github.com/EiThinZarPhyo66/cp1404practicals/pull/3)
-* [Example-2] (https://github.com/EiThinZarPhyo66/cp1404practicals/pull/1)
+* [Example-1](https://github.com/EiThinZarPhyo66/CP1404Practicals/pull/3)
+* [Example-2](https://github.com/EiThinZarPhyo66/CP1404Practicals/pull/1) 
